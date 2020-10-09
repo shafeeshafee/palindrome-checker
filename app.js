@@ -3,7 +3,7 @@ const button = document.querySelector("button");
 const display = document.querySelector("#display");
 
 
-button.addEventListener('click', () => {
+const fill = () => {
 	let word = input.value.toLowerCase(), displayWord = input.value;
 	let wordArray = [];
 
@@ -23,4 +23,12 @@ button.addEventListener('click', () => {
 		display.classList.add("is-not-palindrome");
 		display.innerText = `'${displayWord}' is NOT a palindrome!`
 	}
+}
+
+button.addEventListener('click', () => {
+	fill();
+})
+
+input.addEventListener('keypress', (e) => {
+	e.which === 13 ? fill() : 0;
 })
