@@ -54,7 +54,7 @@ body {
 }
 
 .footnote {
-	font-size: 1.5em;
+	font-size: 1.2em;
 	font-family: "Carter One", cursive;
 	position: fixed;
 	left: 0;
@@ -68,6 +68,7 @@ body {
 
 
 .shake {
+	color: rgb(129, 87, 38);
 	/* Start the shake animation and make the animation last for 0.5 seconds */
 	animation: shake 5s;
   
