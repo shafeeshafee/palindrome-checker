@@ -4,24 +4,29 @@ const display = document.querySelector("#display");
 
 
 const fill = () => {
-	let word = input.value.toLowerCase(), displayWord = input.value;
-	let wordArray = [];
+	if (input.value !== '') {
+		let word = input.value.toLowerCase(), displayWord = input.value;
+		let wordArray = [];
 
-	for (letter of word) {
-		wordArray.push(letter);
-	}
+		for (letter of word) {
+			wordArray.push(letter);
+		}
 
-	const reversed = word.split("").reverse()
+		const reversed = word.split("").reverse()
 
-	display.className = '';
-	input.value = '';
+		display.className = '';
+		input.value = '';
 
-	if (wordArray.join("") === reversed.join("")) {
-		display.classList.add("is-palindrome");
-		display.innerText = `'${displayWord}' is a palindrome!`
+		if (wordArray.join("") === reversed.join("")) {
+			display.classList.add("is-palindrome");
+			display.innerText = `'${displayWord}' is a palindrome!`
+		} else {
+			display.classList.add("is-not-palindrome");
+			display.innerText = `'${displayWord}' is NOT a palindrome!`
+		}
 	} else {
-		display.classList.add("is-not-palindrome");
-		display.innerText = `'${displayWord}' is NOT a palindrome!`
+		display.classList.add('shake')
+		display.innerText = "Enter a word first!"
 	}
 }
 
