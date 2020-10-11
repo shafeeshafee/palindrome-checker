@@ -6,18 +6,13 @@ const display = document.querySelector("#display");
 const fill = () => {
 	if (input.value !== '') {
 		let word = input.value.toLowerCase(), displayWord = input.value;
-		let wordArray = [];
 
-		for (letter of word) {
-			wordArray.push(letter);
-		}
-
-		const reversed = word.split("").reverse()
+		const reversed = word.split("").reverse().join("");
 
 		display.className = '';
 		input.value = '';
 
-		if (wordArray.join("") === reversed.join("")) {
+		if (reversed === word) {
 			display.classList.add("is-palindrome");
 			display.innerText = `'${displayWord}' is a palindrome!`
 		} else {
@@ -35,5 +30,5 @@ button.addEventListener('click', () => {
 })
 
 input.addEventListener('keypress', (e) => {
-	e.which === 13 ? fill() : 0;
+	e.key === 'Enter' ? fill() : 0;
 })
