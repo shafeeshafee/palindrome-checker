@@ -1,18 +1,19 @@
 const input = document.querySelector("#submission");
 const button = document.querySelector("button");
 const display = document.querySelector("#display");
-
+var regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
 
 const fill = () => {
 	if (input.value !== '') {
-		let word = input.value.toLowerCase().replace(/\s+/g, ''), displayWord = input.value;
 
-		const reversed = word.split("").reverse().join("").replace(/\s+/g, '');
+		let word = input.value.toLowerCase().replace(regex, '').replace(/\s+/g, '');
+		let reversed = word.split("").reverse().join("").replace(regex, '').replace(/\s+/g, '');
+		let displayWord = input.value;
 
 		display.className = '';
 		input.value = '';
 
-		if (reversed === word) {
+		if (word === reversed) {
 			display.classList.add("is-palindrome");
 			display.innerText = `'${displayWord}' is a palindrome!`
 		} else {
