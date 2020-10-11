@@ -5,9 +5,9 @@ const display = document.querySelector("#display");
 
 const fill = () => {
 	if (input.value !== '') {
-		let word = input.value.toLowerCase(), displayWord = input.value;
+		let word = input.value.toLowerCase().replace(/\s+/g, ''), displayWord = input.value;
 
-		const reversed = word.split("").reverse().join("");
+		const reversed = word.split("").reverse().join("").replace(/\s+/g, '');
 
 		display.className = '';
 		input.value = '';
