@@ -5,7 +5,6 @@ const regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
 
 const fill = () => {
 	if (input.value !== '') {
-
 		let word = input.value.toLowerCase().replace(regex, '').replace(/\s+/g, '');
 		let reversed = word.split("").reverse().join("").replace(regex, '').replace(/\s+/g, '');
 		let displayWord = input.value;
