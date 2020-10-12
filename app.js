@@ -1,7 +1,7 @@
 const input = document.querySelector("#submission");
 const button = document.querySelector("button");
 const display = document.querySelector("#display");
-var regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
+const regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
 
 const fill = () => {
 	if (input.value !== '') {
